@@ -36,10 +36,10 @@ function App() {
   }
 
   return (
-    <main className="h-screen bg-gradient-to-b from-[#0a1f44] via-[#183a67] to-[#1f4b80] text-white">
+    <main className="bg-gradient-to-b from-[#0a1f44] via-[#183a67] to-[#1f4b80] text-white">
       <Header />
       <Search onSearch={handleSearch}/>
-      <WeatherData location={location} weather={weather}/>
+      <WeatherData weather={weather}/>
     </main>
   )
 }
