@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <main className="bg-gradient-to-b from-[#0a1f44] via-[#183a67] to-[#1f4b80] text-white">
+    <main className="py-5 bg-gradient-to-b from-[#0a1f44] via-[#183a67] to-[#1f4b80] text-white">
       <Header />
       <Search onSearch={handleSearch}/>
       <WeatherData weather={weather}/>
