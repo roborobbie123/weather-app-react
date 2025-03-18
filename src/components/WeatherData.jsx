@@ -1,6 +1,6 @@
-import { TiWeatherSunny, TiWeatherCloudy, TiWeatherPartlySunny, TiWeatherDownpour } from "react-icons/ti";
-import { IoRainyOutline } from "react-icons/io5";
+
 import DayData from "./DayData";
+import { generateIcon } from "../util";
 
 export default function WeatherData({ weather, selectedDay, onSelect }) {
     // const hoursArray = weather.days[0].temp;
@@ -14,23 +14,10 @@ export default function WeatherData({ weather, selectedDay, onSelect }) {
         return days[dayNum];
     }
 
-    function generateIcon(coverage, precip) {
-        console.log(coverage)
-        if (precip > 50) {
-            return (<IoRainyOutline />)
-        }
-        if (coverage <= 12.5) {
-            return (<TiWeatherSunny className="text-amber-300 text-xl"/>);
-        }
-        else if (coverage <= 62.5) {
-            return (<TiWeatherPartlySunny className="text-lg"/>)
-        } else {
-            return (<TiWeatherCloudy className="text-lg"/>)
-        }
-    }
+
 
     return (
-        <div className="flex flex-col items-center mt-10 h-screen">
+        <div className="flex flex-col items-center mt-10 h-screen overflow-y-auto">
             {selectedDay &&
                 <DayData onSelect={onSelect} weather={weather} selectedDay={selectedDay} />}
             {(weather && !selectedDay) &&
